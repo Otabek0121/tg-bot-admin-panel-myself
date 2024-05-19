@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: tg-bot-admin-panel
+  jpa:
+    show-sql: true
+    format-sql: true
+    hibernate:
+      ddl-auto: create
+  datasource:
+    username: postgres
+    password: 20030121
+    url: jdbc:postgresql://localhost:5432/adminpanel
+
+
+
+
+telegram:
+  bot:
+    username: doctor_register_bot
+    token: 7061048788:AAGhHfGltSG4olmbr5KHIXMwZ8WLxtj9OFI
