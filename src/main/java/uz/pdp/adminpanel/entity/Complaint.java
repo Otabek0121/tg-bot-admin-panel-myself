@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import uz.pdp.adminpanel.entity.baseEntity.BaseEntity;
 
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Complaint {
+public class Complaint extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

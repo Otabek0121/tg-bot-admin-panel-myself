@@ -10,5 +10,5 @@ import java.io.Serializable;
 @Value
 public class AchievementDto implements Serializable {
     String nameAchievement;
-    UserResponse user;
+    UserDto user;
 }

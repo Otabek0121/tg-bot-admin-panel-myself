@@ -1,7 +1,9 @@
 package uz.pdp.adminpanel.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import uz.pdp.adminpanel.entity.baseEntity.BaseEntity;
 import uz.pdp.adminpanel.enums.RoleUser;
 import uz.pdp.adminpanel.enums.UserState;
 
@@ -15,7 +17,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "users")
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -27,10 +29,14 @@ public class User {
 
     private String patronymic;
 
+    @NotNull
+    @Column(nullable = false)
     private long chatId;
 
     private String phoneNumber;
 
+    @NotNull
+    @Column(nullable = false)
     private String telegramUsername;
 
     private byte experience;

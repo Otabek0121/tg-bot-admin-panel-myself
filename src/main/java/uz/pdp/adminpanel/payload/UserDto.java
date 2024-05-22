@@ -9,7 +9,7 @@ import java.util.List;
  * DTO for {@link uz.pdp.adminpanel.entity.User}
  */
 @Value
-public class UserResponse implements Serializable {
+public class UserDto implements Serializable {
     String firstname;
     String lastname;
     String patronymic;

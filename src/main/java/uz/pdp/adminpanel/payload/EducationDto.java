@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @Value
 public class EducationDto implements Serializable {
     LocalDate endDate;
+
     String descriptionOfEducation;
-    UserResponse user;
+
+    UserDto user;
 }

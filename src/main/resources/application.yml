@@ -16,5 +16,5 @@ spring:
 
 telegram:
   bot:
-    username: doctor_register_bot
-    token: 7061048788:AAGhHfGltSG4olmbr5KHIXMwZ8WLxtj9OFI
+    username: register_doctor_bot
+    token: 7004775430:AAFAnCLWLHzqrqDoWuN3CzZf4Zeg6NZcLcc

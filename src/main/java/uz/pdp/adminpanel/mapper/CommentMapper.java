@@ -1,15 +1,23 @@
 package uz.pdp.adminpanel.mapper;
 
 import org.mapstruct.*;
+import uz.pdp.adminpanel.entity.Achievement;
 import uz.pdp.adminpanel.entity.Comment;
+import uz.pdp.adminpanel.payload.AchievementDto;
 import uz.pdp.adminpanel.payload.CommentDto;
+
+import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface CommentMapper {
-    Comment toEntity(CommentDto commentDto);
+    Comment toComment(CommentDto commentDto);
 
-    CommentDto toDto(Comment comment);
+    CommentDto toCommentDTO(Comment comment);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Comment partialUpdate(CommentDto commentDto, @MappingTarget Comment comment);
+    Comment commentUpdate(CommentDto commentDto, @MappingTarget Comment comment);
+
+    List<CommentDto> toCommentDTOs(List<Comment> commentList);
+
+    List<Comment> toComments(List<CommentDto> commentDtoList);
 }

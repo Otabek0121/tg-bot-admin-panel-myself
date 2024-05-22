@@ -11,5 +11,5 @@ import java.io.Serializable;
 public class CommentDto implements Serializable {
     String comment;
     byte rating;
-    UserResponse user;
+    UserDto user;
 }

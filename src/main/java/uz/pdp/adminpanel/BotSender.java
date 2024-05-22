@@ -58,63 +58,6 @@ public class BotSender extends TelegramLongPollingBot {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    private void deleteContactButton(Update update){
-        Long chatId = update.getMessage().getChatId();
-
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        sendMessage.setText("Telefon raqamingizni yuborganingiz uchun rahmat!");
-        sendMessage.setReplyMarkup(new ReplyKeyboardRemove(true));
-
-        try {
-            execute(sendMessage);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-    private void sendPhoneNumberButtonCreate(Update update) {
-
-        SendMessage sendMessage = new SendMessage();
-        String text = update.getMessage().getText();
-        Long chatId = update.getMessage().getChatId();
-
-        KeyboardButton phoneNumber = new KeyboardButton("Telefon nomerni jo'natish");
-        phoneNumber.setRequestContact(true);
-
-        KeyboardRow buttons = new KeyboardRow();
-        buttons.add(phoneNumber);
-
-        ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
-        keyboard.setOneTimeKeyboard(true);
-        keyboard.setResizeKeyboard(true);
-        keyboard.setKeyboard(List.of(buttons));
-
-
-        sendMessage.setChatId(chatId);
-
-
-        if (text.equals("/start")) {
-            sendMessage.setText("Iltimos Telefon nomeringizni yuboring.");
-            sendMessage.setReplyMarkup(keyboard);
-        }
-
-        try {
-            execute(sendMessage);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void savePictureInDisc(Update update) {
         if (update.hasMessage() && update.getMessage().hasPhoto()) {
             Message message = update.getMessage();

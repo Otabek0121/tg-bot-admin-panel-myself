@@ -14,5 +14,5 @@ public class AddressDto implements Serializable {
     Double price;
     String workingTime;
     List<String> workingDays;
-    UserResponse user;
+    UserDto user;
 }

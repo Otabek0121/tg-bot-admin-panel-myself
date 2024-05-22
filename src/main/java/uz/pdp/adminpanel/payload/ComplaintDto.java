@@ -12,5 +12,5 @@ public class ComplaintDto implements Serializable {
     String name;
     String phoneNumber;
     String description;
-    UserResponse user;
+    UserDto user;
 }

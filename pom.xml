@@ -55,8 +55,13 @@
 
         <dependency>
             <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.5.5.Final</version> <!-- Eng so'nggi versiyani ishlatishingiz mumkin -->
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>${org.mapstruct.version}</version>
+            <version>1.5.5.Final</version>
             <scope>provided</scope>
         </dependency>
 
@@ -72,6 +77,12 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.dostonhamrakulov</groupId>
+            <artifactId>java-telegram-bot-calendar</artifactId>
+            <version>2.3</version>
         </dependency>
 
     </dependencies>

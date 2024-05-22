@@ -1,15 +1,23 @@
 package uz.pdp.adminpanel.mapper;
 
 import org.mapstruct.*;
+import uz.pdp.adminpanel.entity.Achievement;
 import uz.pdp.adminpanel.entity.Education;
+import uz.pdp.adminpanel.payload.AchievementDto;
 import uz.pdp.adminpanel.payload.EducationDto;
+
+import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface EducationMapper {
-    Education toEntity(EducationDto educationDto);
+    Education toEducation(EducationDto educationDto);
 
-    EducationDto toDto(Education education);
+    EducationDto toEducationDTO(Education education);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Education partialUpdate(EducationDto educationDto, @MappingTarget Education education);
+    Education educationUpdate(EducationDto educationDto, @MappingTarget Education education);
+
+    List<EducationDto> toEducationDTOs(List<Education> educationList);
+
+    List<Education> toEducations(List<EducationDto> educationDtoList);
 }
